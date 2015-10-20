@@ -62,8 +62,8 @@ angular.module('ngIOS9UIWebViewPatch', ['ng']).config(['$provide', function($pro
         return pendingLocationUrl || originalUrlFn.apply(browser, arguments);
       };
 
-      window.addEventListener('popstate', clearPendingLocationUrl, false);
-      window.addEventListener('hashchange', clearPendingLocationUrl, false);
+      $window.addEventListener('popstate', clearPendingLocationUrl, false);
+      $window.addEventListener('hashchange', clearPendingLocationUrl, false);
 
       function clearPendingLocationUrl() {
         pendingLocationUrl = null;
